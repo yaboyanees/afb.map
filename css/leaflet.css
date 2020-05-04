@@ -638,3 +638,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	margin-left: -12px;
 	border-right-color: #fff;
 	}
+
+	@media only screen and (max-width: 600px) {
+	  #map{height:100% !important;}
+		iframe{display: none;}
+	}
