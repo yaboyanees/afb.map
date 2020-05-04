@@ -15,8 +15,8 @@ window.addEventListener("DOMContentLoaded", init);
 var map = L.map("map").setView([39, -98], 5);
 
 // basemap
-var Wikimedia = L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png', {
-	attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+var Wikimedia = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	minZoom: 1,
 	maxZoom: 19
 }).addTo(map);
@@ -51,7 +51,7 @@ function addPoints(data) {
 
     var companyIcon = L.Icon.extend({
         options: {
-            iconSize: [15, 15],
+            iconSize: [18, 18],
         }
     });
 
@@ -60,7 +60,7 @@ function addPoints(data) {
     } else if (bStatus === 'Civilian') {
       var ico = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/openmoji/242/briefcase_1f4bc.png';
     } else {
-      var ico = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/samsung/220/waving-white-flag_1f3f3.png';
+      var ico = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/samsung/220/waving-black-flag_1f3f4.png';
     }
 
     var logoIcon = new companyIcon(
