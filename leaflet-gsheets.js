@@ -41,7 +41,7 @@ function addPoints(data) {
     var bLocation = data[row].YourLocation || 'Not listed'
     var bYear = data[row].ClassYear || 'Not listed'
     var bStatus = data[row].CurrentStatus || 'Not listed'
-    var bURL = data[row].LinkedinURL || 'Not listed'
+    var bURL = data[row].LinkedinURL || '#'
     var bIndustry = data[row].Industry || 'Not listed'
     var bTitle = bName + ", " + bYear;
     var bFunction = bStatus + " | " + bIndustry;
