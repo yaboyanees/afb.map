@@ -1,4 +1,53 @@
-/* required styles */
+body {
+		padding: 0;
+		margin: 0;
+}
+html, body {
+		height: 100%;
+}
+html{overflow-x: hidden;}
+
+#navBar, h1{margin:0; }
+#navBar{padding: 0; background-color: #464646;}
+h1{padding: 10px 10px; color: #f9f9f9; font-family: Helvetica;}
+
+#map{margin-bottom: 10px; height:50%;}
+#table{width: 100%; height:50%}
+#toggleView{display: none;text-align: center; position: absolute; left: 0;right: 0; bottom: 20px; z-index: 999;}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.map.btn {
+  border-radius: 16px 0 0 16px;
+	background-color: #333;
+	color: #f9f9f9;
+}
+.table.btn {
+  border-radius: 0 16px 16px 0;
+	margin-left: -5px;
+	background-color: #333;
+	color: #f9f9f9;
+}
+.btn:hover {
+  background-color: #555;
+}
+
+button:focus {outline:0;}
+
+
+@media only screen and (max-width: 1000px) {
+	#map{height:100% !important;}
+	#table{display: none; height:100% !important;}
+	#toggleView{display: block !important; }
+	html{overflow: hidden;}
+}
 
 .leaflet-pane,
 .leaflet-tile,
@@ -637,9 +686,4 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	left: 0;
 	margin-left: -12px;
 	border-right-color: #fff;
-	}
-
-	@media only screen and (max-width: 300px) {
-	  #map{height:100% !important;}
-		iframe{display: none !important;}
 	}

@@ -6,21 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/leaflet.css"/>
-    <style>
-        body {
-            padding: 10px;
-            margin: 0;
-        }
-        html, body {
-            height: 100%;
-        }
-        #map{margin-bottom: 10px; height:500px;}
-        iframe{width: 100%; height:325px}
-    </style>
+
 </head>
 <body>
+    <div id="navBar"><h1>🏴‍☠️ Army Football Brotherhood SITREP 🗺️</h1></div>
     <div id="map"></div>
-    <iframe src="https://docs.google.com/spreadsheets/d/1QTY5ybMfttoqnuIwC8VyWDrvjr7vJrbqnEI_JmMnXvA/edit?usp=sharing"></iframe>
+    <div id="toggleView"><button class="map btn" onclick="mapFunction()">Map</button> <button class="table btn" onclick="tableFunction()">Table</button></div>
+    <iframe id="table" src="https://docs.google.com/spreadsheets/d/1QTY5ybMfttoqnuIwC8VyWDrvjr7vJrbqnEI_JmMnXvA/edit?usp=sharing"></iframe>
+
     <script src="js/leaflet.js"></script>
     <script src="js/tabletop.min.js"></script>
     <script src="leaflet-gsheets.js"></script>

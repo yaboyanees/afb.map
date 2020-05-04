@@ -11,6 +11,22 @@ function init() {
 }
 window.addEventListener("DOMContentLoaded", init);
 
+function mapFunction() {
+  var x = document.getElementById("map");
+  //var xx = document.getElementsById("map-btn");
+  var y = document.getElementById("table");
+    x.style.display = "block";
+    y.style.display = "none";
+}
+
+function tableFunction() {
+  var x = document.getElementById("map");
+  var y = document.getElementById("table");
+    x.style.display = "none";
+    y.style.display = "block";
+}
+
+
 // Create a new Leaflet map centered on the continental US
 var map = L.map("map").setView([39, -98], 5);
 
