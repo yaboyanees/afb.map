@@ -5,7 +5,7 @@
 
 // init() is called as soon as the page loads
 function init() {
-  var pointsURL = "https://docs.google.com/spreadsheets/d/1kIIw9GAvZ1oiKrkii8eT6j_mi_KFgnVLF3b0kRvaLl8/edit?usp=sharing";
+  var pointsURL = "https://docs.google.com/spreadsheets/d/1QTY5ybMfttoqnuIwC8VyWDrvjr7vJrbqnEI_JmMnXvA/edit?usp=sharing";
 
   Tabletop.init({ key: pointsURL, callback: addPoints, simpleSheet: true }); // simpleSheet assumes there is only one table and automatically sends its data
 }
@@ -36,22 +36,37 @@ function addPoints(data) {
     );
 
     // variables for popups
-    var location = data[row].Location || 'Not listed'
-    var addy = data[row].Address || 'Not listed'
-    var phone = data[row].Phone || 'Not listed'
-    var hours = data[row].Hours || 'Not listed'
+    var bCreated = data[row].Timestamp || 'Not listed'
+    var bName = data[row].YourName || 'Not listed'
+    var bLocation = data[row].YourLocation || 'Not listed'
+    var bYear = data[row].ClassYear || 'Not listed'
+    var bStatus = data[row].CurrentStatus || 'Not listed'
+    var bURL = data[row].LinkedinURL || 'Not listed'
+    var bIndustry = data[row].Industry || 'Not listed'
+    var bTitle = bName + ", " + bYear;
+    var bFunction = bStatus + " | " + bIndustry;
 
     // POPUPS
-    marker.bindPopup('<h3 style="margin:0 0 3px 0;">' + location + '</h3>' + 'Address: ' + addy + '<br/>Phone: <a href="tel:' + phone + '">' + phone + '</a>' + '<br/>Hours: ' + hours);
+    marker.bindPopup('<h3 style="margin:0 0 3px 0;"><a href=' + bURL + '>' + bTitle + '</a></h3>' + bFunction + '<br><br><i>' + 'As of: ' + bCreated + '</i>');
 
     var companyIcon = L.Icon.extend({
         options: {
-            iconSize: [30, 30],
+            iconSize: [15, 15],
         }
     });
+
+    if(bStatus === 'Military'){
+      var ico = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/twitter/247/military-medal_1f396.png';
+    } else if (bStatus === 'Civilian') {
+      var ico = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/openmoji/242/briefcase_1f4bc.png';
+    } else {
+      var ico = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/samsung/220/waving-white-flag_1f3f3.png';
+    }
+
     var logoIcon = new companyIcon(
         //{ iconUrl: data[row].Logo || 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/briefcase_1f4bc.png' });
-        { iconUrl: 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/emojipedia/132/test-tube_1f9ea.png' });
+        //{ iconUrl: 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/emojipedia/132/test-tube_1f9ea.png' });
+        { iconUrl: ico });
 
     marker.setIcon(logoIcon);
   }
