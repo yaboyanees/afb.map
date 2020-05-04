@@ -639,7 +639,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	border-right-color: #fff;
 	}
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 300px) {
 	  #map{height:100% !important;}
 		iframe{display: none;}
 	}
