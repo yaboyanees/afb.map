@@ -641,5 +641,5 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 	@media only screen and (max-width: 300px) {
 	  #map{height:100% !important;}
-		iframe{display: none;}
+		iframe{display: none !important;}
 	}
