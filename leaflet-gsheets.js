@@ -15,15 +15,19 @@ function mapFunction() {
   var x = document.getElementById("map");
   //var xx = document.getElementsById("map-btn");
   var y = document.getElementById("table");
+  var z = document.getElementById("legend");
     x.style.display = "block";
     y.style.display = "none";
+    z.style.display = "block";
 }
 
 function tableFunction() {
   var x = document.getElementById("map");
   var y = document.getElementById("table");
+  var z = document.getElementById("legend");
     x.style.display = "none";
     y.style.display = "block";
+    z.style.display = "none";
 }
 
 
