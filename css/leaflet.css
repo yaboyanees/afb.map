@@ -52,6 +52,9 @@ h1{padding: 10px 10px; color: #f9f9f9; }
 
 button:focus {outline:0;}
 
+/* table{width: 100%;}
+th{text-align: left; padding:10px;}
+td{padding: 10px;} */
 
 @media only screen and (max-width: 1000px) {
 	#map{height:100% !important; margin-top: 50px;}

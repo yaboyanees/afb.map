@@ -8,12 +8,13 @@ function init() {
   var pointsURL = "https://docs.google.com/spreadsheets/d/1QTY5ybMfttoqnuIwC8VyWDrvjr7vJrbqnEI_JmMnXvA/edit?usp=sharing";
 
   Tabletop.init({ key: pointsURL, callback: addPoints, simpleSheet: true }); // simpleSheet assumes there is only one table and automatically sends its data
+
 }
+
 window.addEventListener("DOMContentLoaded", init);
 
 function mapFunction() {
   var x = document.getElementById("map");
-  //var xx = document.getElementsById("map-btn");
   var y = document.getElementById("table");
   var z = document.getElementById("legend");
     x.style.display = "block";
@@ -90,5 +91,52 @@ function addPoints(data) {
 
     marker.setIcon(logoIcon);
   }
-  //console.log(data)
+
+  /* var f = document.createElement("TH");
+  var g = document.createTextNode("Name");
+  f.appendChild(g);
+  document.getElementById("tableFeed").appendChild(f);
+
+  var f = document.createElement("TH");
+  var g = document.createTextNode("Location");
+  f.appendChild(g);
+  document.getElementById("tableFeed").appendChild(f);
+
+  var f = document.createElement("TH");
+  var g = document.createTextNode("Status");
+  f.appendChild(g);
+  document.getElementById("tableFeed").appendChild(f);
+
+  var f = document.createElement("TH");
+  var g = document.createTextNode("Industry");
+  f.appendChild(g);
+  document.getElementById("tableFeed").appendChild(f);
+
+
+  for (var i = 0; i < data.length; i++) {
+    var b = document.createElement("TR");
+    b.setAttribute("id", data[i].YourName);
+    document.getElementById("tableFeed").appendChild(b);
+
+    var c = document.createElement("TD");
+    var d = document.createTextNode(data[i].YourName);
+    c.appendChild(d);
+    document.getElementById(data[i].YourName).appendChild(c);
+
+    var c = document.createElement("TD");
+    var d = document.createTextNode(data[i].YourLocation);
+    c.appendChild(d);
+    document.getElementById(data[i].YourName).appendChild(c);
+
+    var c = document.createElement("TD");
+    var d = document.createTextNode(data[i].CurrentStatus);
+    c.appendChild(d);
+    document.getElementById(data[i].YourName).appendChild(c);
+
+    var c = document.createElement("TD");
+    var d = document.createTextNode(data[i].Industry);
+    c.appendChild(d);
+    document.getElementById(data[i].YourName).appendChild(c);
+  }*/
+
 }
